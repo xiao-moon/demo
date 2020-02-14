@@ -1,0 +1,36 @@
+server:
+  port: 8088
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包
+    # 数据库名称,mysql8以上必须要加这些后缀
+    url: jdbc:mysql://localhost:3306/securitydemo?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root   #123456
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+  session:
+    store-type: none #关闭集群的session管理
+  thymeleaf:
+    cache: false
+
+mybatis-plus:
+  mapper-locations: classpath:mybatis/*/**.xml
+#  typeAliasesPackage: com.sucl.sbmp.*.entity
+#    global-config:
+#      refresh: true
+#      db-config:
+#        db-type: mysql
+#      #      id-type: uuid
+#      configuration:
+#        map-underscore-to-camel-case: true
+#        cache-enabled: false
+#      config-location: classpath:mybatis-config.xml
+
+
+

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.moon</groupId>
+    <artifactId>code</artifactId>
+    <packaging>pom</packaging>
+    <name>moon</name>
+    <description>学习代码整合</description>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 继承springboot父项目，或者使用spring-boot-dependencies管理依赖，具体区别自行百度-->
+    <!--    <parent>-->
+    <!--        <groupId>org.springframework.boot</groupId>-->
+    <!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--        <version>2.2.2.RELEASE</version>-->
+    <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    <!--    </parent>-->
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <druid.version>1.1.14</druid.version>
+        <mybatis.plus.version>3.2.0</mybatis.plus.version>
+        <logback.version>1.2.3</logback.version>
+        <junit.version>4.12</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <lombok.version>1.16.18</lombok.version>
+        <social.version>1.1.6.RELEASE</social.version>
+        <pagehelper.version>1.2.12</pagehelper.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <security.oauth.version>2.4.0.RELEASE</security.oauth.version>
+        <netty.version>4.1.25.Final</netty.version>
+        <swagger.version>2.9.2</swagger.version>
+    </properties>
+
+
+    <!--springboot管理的依赖不需要加入，如果想独立引入其他架包或者更改版本，可以引入-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- SpringBoot的依赖配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--speingsocial核心模块-->
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-core</artifactId>
+                <version>${social.version}</version>
+            </dependency>
+
+            <!--spring-security-oauth依赖 -->
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${security.oauth.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus注意：不能和mybatis相关架包同时引入 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <!-- pagehelper分页 -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+
+
+            <!--阿里数据库连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-core</artifactId>
+                <version>${social.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-web</artifactId>
+                <version>${social.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-config</artifactId>
+                <version>${social.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.social</groupId>
+                <artifactId>spring-social-security</artifactId>
+                <version>${social.version}</version>
+            </dependency>
+
+
+            <!--mybatis整合springboot-->
+            <!--            <dependency>-->
+            <!--                <groupId>org.mybatis.spring.boot</groupId>-->
+            <!--                <artifactId>mybatis-spring-boot-starter</artifactId>-->
+            <!--                <version>${mybatis.version}</version>-->
+            <!--            </dependency>-->
+
+            <!--logback-->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <!--log4j-->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!--junit-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.8.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>4.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>1.9.3</version>
+            </dependency>
+
+            <!--图形验证码-->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+
+            <!--netty相关-->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+
+            <!-- swagger2-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+<!--                <exclusions>-->
+<!--                    <exclusion>-->
+<!--                        <groupId>io.swagger</groupId>-->
+<!--                        <artifactId>swagger-annotations</artifactId>-->
+<!--                    </exclusion>-->
+<!--                    <exclusion>-->
+<!--                        <groupId>io.swagger</groupId>-->
+<!--                        <artifactId>swagger-models</artifactId>-->
+<!--                    </exclusion>-->
+<!--                </exclusions>-->
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <!--用于mvn 生命周期的测试阶段的插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.4.2</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+
+
+
+
+
+
+    <modules>
+        <module>code-security</module>
+        <module>code-web</module>
+        <module>code-im</module>
+        <module>code-demo</module>
+    </modules>
+
+
+</project>

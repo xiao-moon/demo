@@ -1,0 +1,23 @@
+**表单登录**
+##1、2、3、4、5、8步骤为表单登录认证流程
+步骤1：UsernamePasswordAuthenticationFilter:过滤器链上的一个过滤器，所有请求都会挨个便利过滤器链上的过滤器，知道通过为止
+步骤2：AuthenticationManager:UsernamePasswordAuthenticationFilter用用户名和密码组装成一个UsernamePasswordAuthenticationToken对象
+        传给AuthenticationManager,AuthenticationManager会从一堆AuthenticationProvider实现中(provider方法)根据传入的UsernamePasswordAuthenticationToken
+        找到合适的对象并调用
+步骤3、4：DaoAuthenticationProvider和UserDetailsService:被AuthenticationManager选中的provider,会调用UserDetailsService对用户进行校验
+步骤5：UserDetails：正常情况下，校验逻辑需要自定义的，所以需要自己实现UserDetailsService和UserDetails；UserDetails存放的
+        是用户信息，继承User类；UserDetailsService将传入的token和UserDetails做校验
+步骤8：Authentication:校验成功后会对UsernamePasswordAuthenticationToken做一个标记，表示已认证，并放到session中;Authentication是所有存放token类的基类
+
+**短信验证码**
+##6、7步骤自定义为短信登录流程
+步骤6：SmsAuthenticationFilter:用于拦截短信登录请求；在过滤器中拿到用户信息封装到自定义的SmsAuthenticationToken中，
+        并传给AuthenticationManager【整个系统只有一个】
+步骤2：AuthenticationManager:检索AuthenticationProvider，通过自定义SmsAuthenticationProvider使其能够被检索到
+步骤7：SmsAuthenticationProvider:用于校验短信的Token信息，同样是调用UserDetailsService，后续步骤与表单登录一致
+        【不同的是:不会验短信验证码，只是做用户信息的认证，短信验证码在SmsAuthenticationFilter之前校验】
+
+最后写一个继承SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity>的类将这些步骤串起来
+
+
+

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bff4ba37-53cf-4d0a-9e8a-e1be29fe7166" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/code-im/src/main/java/com/moon/netty/chat/enums/OperatorFriendRequestTypeEnum.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/code-im/src/main/java/com/moon/netty/chat/core/ChatHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/code-im/src/main/java/com/moon/netty/test/b/ChatHandler.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/golf23/a_singleton/e/EnumSingleton.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/code-im/src/main/java/com/moon/netty/chat/enums/MsgActionEnum.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1XG0Z1NosF4jCwQADWKbgstd9is" />
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/golf23/b_proto" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.moon.demo.golf23.b_proto" />
+      <recent name="com.moon.netty.chat.core" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\code\code-demo\src\main\java\com\moon\demo\golf23\b_proto" />
+      <recent name="F:\code\code-demo\src\main\java\com\moon\demo" />
+      <recent name="F:\code\code-im\src\main\java\com\moon\netty\chat\core" />
+      <recent name="F:\code\code-im\src\main\java\com\moon\netty\chat\utils" />
+      <recent name="F:\code\code-im\src\main\java\com\moon\netty\chat\enums" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.WebApplication">
+    <configuration name="HelloServer" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.moon.netty.test.a.HelloServer" />
+      <module name="code-im" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.moon.netty.test.a.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WSServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.moon.netty.test.b.WSServer" />
+      <module name="code-im" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.moon.netty.test.b.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="code-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.moon.WebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WSServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\guanren\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bff4ba37-53cf-4d0a-9e8a-e1be29fe7166" name="Default Changelist" comment="" />
+      <created>1580657176009</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580657176009</updated>
+      <workItem from="1580657178981" duration="87433000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

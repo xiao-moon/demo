@@ -1,0 +1,17 @@
+**session管理**
+
+session超时管理:
+
+session并发控制:
+
+集群session管理:
+    1、添加spring-session的依赖
+    <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session</artifactId>
+        <version>1.3.5.RELEASE</version>
+    </dependency>
+
+    2、spring-session支持redis、mongoDB、Jdbc、HashMap、Hazelcast、none
+    3、在yml中指定springsession的类型:spring.session.store-type=redis
+    4、在yml中指定redis的地址等配置文件即可

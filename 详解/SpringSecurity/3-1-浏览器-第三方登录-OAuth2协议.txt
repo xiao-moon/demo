@@ -1,0 +1,70 @@
+**社会网站账号登录【第三方登录】**
+
+OAuth协议运行流程:
+角色：
+    服务提供商：Provider 其中服务提供商包含了两个角色：
+        认证服务器：Authorization Server:认证用户的身份并且产生令牌
+        资源服务器：Resource Server:保存用户的资源和验证令牌
+        注意：认证服务器和资源服务器可以是一个应用
+    资源所有者：Resource Owner【用户】
+    第三方应用：Client
+
+流程：
+    0、用户访问第三方应用
+    1、第三方请求用户给予授权
+    2、用户同意授权
+    3、第三方应用访问服务提供商的认证服务器并申请令牌
+    4、认证服务器认证后给第三方服务器发放令牌
+    5、第三方应用拿到令牌后带着令牌去第三方应用申请资源
+    6、资源服务器确认令牌无误，开放资源给第三方
+
+实现步骤：
+    0、用户访问第三方客户端
+    1、如果需要用户授权，会将用户导向认证服务器
+    2、用户同意授权【在认证服务器上完成授权】
+    3、用户同意授权，返回第三方应用并携带授权码
+    4、第三方拿到授权码后向认证服务器申请令牌【第三方后台完成，对用户不可见】
+    5、认证服务器核对无误后发放令牌
+    6、第三方服务器去资源服务器获取用户信息
+    7、根据用户信息构建Authentication并放入SecurityContext
+
+SpringSocial在上述步骤中的作用：
+    1、将上述实现步骤封装起来并且实现了
+    2、将整个流程通过SocialAuthenticationFilter加入到SpringSecurity过滤器链中;
+       当发送请求时SocialAuthenticationFilter会将请求拦下来带着上述步骤走完
+
+SpringSocial接口介绍：
+    1、ServiceProvider接口【AbstractOAuth2ServiceProvider实现】：服务提供商的抽象
+    2、OAuth2Operations接口【OAuth2Template实现】：封装了【实现步骤】中第一步到第五步
+    3、Api接口【AbstractOAuth2ApiBinding实现】：【实现步骤】第六步，实现了获取用户信息
+    4、Connection接口【OAuth2Connection实现】：封装前六步获取到的用户信息，但是字段是固定的
+    5、ConnectionFactory接口【OAuth2ConnectionFactory实现】：工厂负责创建包含了用户信息的Connection实例，
+       该连接工厂包含了ServiceProvider接口和ApiAdapter接口
+    6、ApiAdapter接口：将服务商各自的数据结构转换为Connection标准的数据结构
+    7、数据库存储了第三方和授权应用的用户对应关系【UserConnection表：存储了用户id和服务提供商的对应关系】
+    8、UsersConnectionRepository接口【JdbcUsersConnectionRepository实现】：操作UserConnection表
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

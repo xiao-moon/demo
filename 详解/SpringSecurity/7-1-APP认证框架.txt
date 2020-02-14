@@ -1,0 +1,62 @@
+**Spring Security Oauth 开发APP框架**
+
+内容简介:
+    1、实现一个标准的OAuth2协议中Provider角色的重要功能
+    2、重构之前的三种认证方式的代码,使其支持token
+    3、高级特性
+
+spring-security-oauth源码解析:【绿色代表实体类,蓝色代表接口或抽象类】
+    1、TokenEndpoint:整个流程的入口点,所有处理令牌的请求都要从这里通过
+    2、ClientDetailService【实现类:InMemoryClientDetailService】:根据传入的clientId读取相应的第三方应用的信息
+    3、ClientDetails:封装第三方应用的信息
+    4、TokenRequest:由TokenEndpoint创建,封装请求中其他参数的信息
+    5、TokenGranter【实现类:CompositeTokenGranter】:根据传入的grant_type挑一个具体的实现来执行令牌生成的逻辑；
+      不管哪种实现,都活生成OAuth2Request类和Authentication接口
+        5.1、OAuth2Request:ClientDetails和TokenRequest信息的整合
+        5.2、封装的是授权用户的信息
+    6、OAuth2Authentication类:封装了TokenGranter和TokenRequest中的信息
+    7、AuthorizationServerTokenServices【实现类:DefaultTokenServices】:认证服务器令牌服务
+        7.1、TokenStore:处理令牌存取
+        7.2、TokenEnhance:令牌增强器,可以对令牌进行自定义改造
+    8、OAuth2AccessToken:生成Token令牌
+
+
+具体步骤:
+    1、实现认证服务器:MoonAuthorizationServerConfig类,开启注解即可
+    2、资源服务器:MoonResourceServerConfig类,开启注解即可
+    注意:只要token没失效,再次登录时获取的还是原来的token
+
+
+**基于JWT实现SSO单点登录**
+
+实现流程:
+    0、访问请求发送到应用上
+    1、应用A向认证服务器请求授权
+    2、用户在认证服务器上认证并授权
+    3、认证授权成功后返回授权码给应用A
+    4、应用A拿着授权码去认证服务器请求令牌
+    5、认证服务器返回JWT令牌给应用A
+    6、应用A解析JWT并登录，并将信息存到Authentication并放到SecurityContext中
+    7、应用A访问另一台系统应用B
+    8、10、应用B向认证服务器进行授权请求，同样要走完完整的Oauth流程并返回JWT【和发给A的JWT码是不一样的，但是解析结果都是一样的】
+    9、认证服务器对应用B进行授权
+    11、应用B拿到JWT并解析登录
+    12、使用JWT访问资源服务器
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

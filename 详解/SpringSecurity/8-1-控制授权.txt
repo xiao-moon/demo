@@ -1,0 +1,34 @@
+**控制权限**
+一、简单角色控制
+1、在config配置中添加一句.antMatchers(HttpMethod.GET,"/role/*").hasRole("ADMIN");
+   表示只有get请求该路径才会需要权限，这是对请求方法和请求路径的控制
+2、授权是在UserDetailsService实现类中来完成的，并且要格式为:ROLE_ADMIN,ROLE_EMP
+3、对于不变的权限，可以直接编码到代码中即可
+4、如果想对一个资源使用多个权限表达式:antMatchers(HttpMethod.GET,"/role/*").access("hasRole('ADMIN') and hasIpAddress('xxxxxxx')")
+
+
+AnonymousAuthenticationFilter过滤器:
+    1、判断前面的过滤器是否经过了身份认证
+    2、否:创建一个AnonymousAuthenticationToken
+    3、最后交给FilterSecurityInterceptor来决定当前的认证权限是否可以访问请求的资源
+
+二、权限模块
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

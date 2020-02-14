@@ -1,0 +1,11 @@
+**退出登录**
+在首页配置退出地址：<a href="/logout">退出</a>
+
+springsecurity退出处理的机制【步骤】
+    1、使当前session失效
+    2、清除与当前用户有关的remember-me记录
+    3、清空当前SecurityContext
+    4、重定向到登录页
+
+自定义退出相关操作
+    1、config配置：http.logout().**

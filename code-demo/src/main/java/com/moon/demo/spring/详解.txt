@@ -1,0 +1,15 @@
+过滤器;拦截器;AOP的区别
+1.过滤器可以拦截到方法的请求和响应（ServletRequest request, SetvletResponse response），
+并对请求响应做出响应的过滤操作，比如设置字符编码、鉴权操作。
+2.拦截器可以在方法之前（preHandle）和方法执行之后（afterCompletion）进行操作，回调操作（postHandle），
+可以获取执行的方法的名称，请求（HttpServletRequest）。
+3.AOP操作可以对操作进行横向的拦截，最大的优势在于可以获取执行方法的参数，
+对方法进行统一的处理，常见使用日志，事务，请求参数安全验证等。
+
+
+
+
+
+
+
+
