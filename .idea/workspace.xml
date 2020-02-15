@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bff4ba37-53cf-4d0a-9e8a-e1be29fe7166" name="Default Changelist" comment="" />
+    <list default="true" id="bff4ba37-53cf-4d0a-9e8a-e1be29fe7166" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/redis/RedisConfigurationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/redis/lettuce/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/redis/lettuce/RedisConfig2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/redis/详解.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/springmvc/详解.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code-demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/code-demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/springmvc/MVCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/springmvc/MVCController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code-demo/target/classes/com/moon/demo/springmvc/MVCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/code-demo/target/classes/com/moon/demo/springmvc/MVCController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code-demo/target/classes/com/moon/demo/springmvc/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/code-demo/target/classes/com/moon/demo/springmvc/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code-demo/target/code-demo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/code-demo/target/code-demo-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code-demo/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/code-demo/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/code-web/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,20 +33,28 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/code-im/src/main/java/com/moon/netty/chat/enums/OperatorFriendRequestTypeEnum.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/code-im/src/main/java/com/moon/netty/chat/core/ChatHandler.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/code-im/src/main/java/com/moon/netty/test/b/ChatHandler.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/golf23/a_singleton/e/EnumSingleton.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/redis/RedisConfigurationTest.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/code-im/src/main/java/com/moon/netty/chat/enums/MsgActionEnum.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1XG0Z1NosF4jCwQADWKbgstd9is" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/code-demo/src/main/java/com/moon/demo/golf23/b_proto" />
@@ -119,11 +143,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580657176009</updated>
-      <workItem from="1580657178981" duration="87433000" />
+      <workItem from="1580657178981" duration="106130000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

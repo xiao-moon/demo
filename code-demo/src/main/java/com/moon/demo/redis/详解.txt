@@ -1,0 +1,61 @@
+Spring Boot 从 2.0版本开始，将默认的Redis客户端Jedis替换问Lettuce，下面描述Lettuce的配置使用。
+使用步骤：
+单机版：
+1.在项目的pom.xml文件下，引入Redis在Spring Boot 下的相关Jar包依赖。
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+2.在项目的resources目录下，在application.yml文件里添加lettuce的配置参数。
+#Redis配置
+spring:
+  redis:
+    database: 6  #Redis索引0~15，默认为0
+    host: 127.0.0.1
+    port: 6379
+    password:  #密码（默认为空）
+    lettuce: # 这里标明使用lettuce配置
+      pool:
+        max-active: 8   #连接池最大连接数（使用负值表示没有限制）
+        max-wait: -1ms  #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-idle: 5     #连接池中的最大空闲连接
+        min-idle: 0     #连接池中的最小空闲连接
+    timeout: 10000ms    #连接超时时间（毫秒）
+
+3.添加Redisson的配置参数读取类RedisConfig
+
+集群版+多数据源：
+1.配置文件
+spring:
+  redis:
+    cluster:
+      nodes: 192.168.131.118:4883,192.168.131.118:4884,192.168.131.118:4885
+#      nodes:
+#        - 192.168.131.118:4883
+#        - 1192.168.131.118:4884
+#        - 192.168.131.118:4885
+    password: adfafsas
+    lettuce:
+      pool:
+        # 最大活跃链接数 默认8
+        max-active: 5
+        # 最大空闲连接数 默认8
+        max-idle: 10
+        # 最小空闲连接数 默认0
+        min-idle: 0
+  secondaryRedis:
+    cluster:
+      nodes: 192.168.131.118:4883,192.168.131.118:4884,192.168.131.118:4885
+#      nodes:
+#        - 192.168.131.118:4883
+#        - 192.168.131.118:4884
+#        - 192.168.131.118:4885
+    password: advfafasfsa
+
+
+
