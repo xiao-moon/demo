@@ -6,3 +6,5 @@
 1、@Autowired默认按照byType方式进行bean匹配，@Resource默认按照byName方式进行bean匹配
 2、@Autowired是Spring的注解，@Resource是J2EE的注解，这个看一下导入注解的时候这两个注解的包名就一清二楚了
 Spring属于第三方的，J2EE是Java自己的东西，因此，建议使用@Resource注解，以减少代码和Spring之间的耦合。
+
+

@@ -36,6 +36,7 @@
         <netty.version>4.1.25.Final</netty.version>
         <swagger.version>2.9.2</swagger.version>
         <lettuce.version>2.8.0</lettuce.version>
+        <guava.version>28.2-jre</guava.version>
     </properties>
 
 
@@ -206,6 +207,14 @@
                 <artifactId>commons-pool2</artifactId>
                 <version>${lettuce.version}</version>
             </dependency>
+
+            <!-- 实现布隆过滤器 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
 
 
         </dependencies>

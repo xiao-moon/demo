@@ -1,0 +1,90 @@
+1、Redis服务器搭建
+如果你不是用docker,那么你需要先在服务器上部署redis，然后单独安装支持redis布隆过滤器的插件rebloom。
+如果你用过docker那么部署就非常简单了，只需以下命令：
+　　docker pull redislabs/rebloom # 拉取镜像
+　　docker run -p 6379:6379 redislabs/rebloom # 运行容器
+
+2、Lua批量插入脚本
+bloomFilter-inster.lua
+local values = KEYS
+local bloomName = ARGV[1]
+local result_1
+for k,v in ipairs(values) do
+ result_1 = redis.call('BF.ADD',bloomName,v)
+end
+return result_1
+1）参数说明
+这里的 KEYS 和 ARGV[1]都是需要我们在java代码中传入，redisTemplate有个方法
+execute(RedisScript<T> script, List<K> keys, Object... args)
+script实体中中封装批量插入的lua脚本。
+keys 对于脚本的 KEYS。
+ARGV[1]对于可变参数第一个，如果输入多个可变参数，可以可以通过ARGV[2].....去获取。
+2）遍历
+Lua遍历脚本有两种方式一个是ipairs,另一个是pairs它们还是有差别的。这里也不做展开，下面有篇博客可以参考。
+注意Lua的遍历和java中遍历还有有点区别的，我们java中是从0开始，而对于Lua脚本 k是从1开始的。
+3）插入命令
+BF.ADD 是往布隆过滤器中插入数据的命令，插入成功返回 true。
+
+3、判断布隆过滤器元素是否存在Lua脚本
+bloomFilter-exist.lua
+local bloomName = KEYS[1]
+local value = KEYS[2]
+-- bloomFilter
+local result_1 = redis.call('BF.EXISTS', bloomName, value)
+return result_1
+从这里我们可以很明显看到， KEYS[1]对于的是keys集合的get(0)位置,所以说Lua遍历是从1开始的。
+BF.EXISTS 是判断布隆过滤器中是否存在该数据命令，存在返回true。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

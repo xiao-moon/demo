@@ -3,7 +3,7 @@
 图片管理:Nginx+fastdfs
 聊天消息保存:RabbitMQ+MySql
 云服务器:腾讯云
-
+单机netty并发量：7000
 
 
 app启动时的操作:

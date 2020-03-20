@@ -32,6 +32,20 @@ spring:
         max-idle: 5     #连接池中的最大空闲连接
         min-idle: 0     #连接池中的最小空闲连接
     timeout: 10000ms    #连接超时时间（毫秒）
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: root
+    password: root
+    #虚拟host 可以不设置,使用server默认host
+    virtual-host: JCcccHost
+    listener:
+      type: simple
+      simple:
+        default-requeue-rejected: false
+        acknowledge-mode: manual
+
+
 
 
 

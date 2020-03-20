@@ -1,0 +1,17 @@
+在linux上安装rabbitmq并做相关配置
+
+在代码中使用：
+1.pom.xml里用到的jar依赖
+2.配置application.yml
+3.代码实现
+
+理解：
+Direct<直接>：1对1-----一个消息只能被一个消费者消费
+Topic<主题>：1对多-----一个消息可以被多个消费者消费
+Fanout<分列>：广播
+
+rabbitTemplate和amqpTemplate有什么关系?
+源码中会发现rabbitTemplate实现自amqpTemplate接口，使用起来并无区别，需引入spring-boot-starter-amqp依赖。
+
+rabbitmq的通配符模式（Topic Exchange）的*和#区别?
+符号“#”匹配路由键的一个或多个词，符号“*”匹配路由键的一个词。
