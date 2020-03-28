@@ -258,6 +258,7 @@
         <module>code-web</module>
         <module>code-im</module>
         <module>code-demo</module>
+        <module>code-netty</module>
     </modules>
 
 
