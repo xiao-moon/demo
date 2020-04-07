@@ -1,4 +1,4 @@
-package com.moon.demo.golf23.b_proto;
+package com.moon.demo.golf23.d_proto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

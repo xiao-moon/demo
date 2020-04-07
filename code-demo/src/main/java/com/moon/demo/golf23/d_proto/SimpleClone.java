@@ -1,4 +1,4 @@
-package com.moon.demo.golf23.b_proto;
+package com.moon.demo.golf23.d_proto;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
