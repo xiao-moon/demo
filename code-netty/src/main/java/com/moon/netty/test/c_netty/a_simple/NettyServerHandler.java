@@ -65,7 +65,6 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
             public void run() {
 
                 try {
-                    Thread.sleep(5 * 1000);
                     ctx.writeAndFlush(Unpooled.copiedBuffer("hello, 客户端~(>^ω^<)喵4", CharsetUtil.UTF_8));
                     System.out.println("channel code=" + ctx.channel().hashCode());
                 } catch (Exception ex) {
