@@ -1,8 +1,8 @@
 package com.moon.netty.test.c_netty.dubborpc.provider;
 
-import com.atguigu.netty.dubborpc.publicinterface.HelloService;
+import com.moon.netty.test.c_netty.dubborpc.publicinterface.HelloService;
 
-public class HelloServiceImpl implements HelloService{
+public class HelloServiceImpl implements HelloService {
 
     private static int count = 0;
     //当有消费方调用该方法时， 就返回一个结果

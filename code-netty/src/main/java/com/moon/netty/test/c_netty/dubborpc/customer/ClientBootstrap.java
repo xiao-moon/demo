@@ -1,7 +1,7 @@
 package com.moon.netty.test.c_netty.dubborpc.customer;
 
-import com.atguigu.netty.dubborpc.netty.NettyClient;
-import com.atguigu.netty.dubborpc.publicinterface.HelloService;
+import com.moon.netty.test.c_netty.dubborpc.netty.NettyClient;
+import com.moon.netty.test.c_netty.dubborpc.publicinterface.HelloService;
 
 public class ClientBootstrap {
 

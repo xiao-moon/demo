@@ -1,8 +1,8 @@
 package com.moon.netty.test.c_netty.dubborpc.netty;
 
 
-import com.atguigu.netty.dubborpc.customer.ClientBootstrap;
-import com.atguigu.netty.dubborpc.provider.HelloServiceImpl;
+import com.moon.netty.test.c_netty.dubborpc.customer.ClientBootstrap;
+import com.moon.netty.test.c_netty.dubborpc.provider.HelloServiceImpl;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
