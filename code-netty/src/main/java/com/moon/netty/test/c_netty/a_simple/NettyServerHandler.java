@@ -17,7 +17,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
 
     //读取数据实际(这里我们可以读取客户端发送的消息)
     /*
-    1. ChannelHandlerContext ctx:上下文对象, 含有 管道pipeline , 通道channel, 地址
+    1. ChannelHandlerContext ctx:上下文对象, 含有 管道pipeline , 通道channel, 连接的地址
     2. Object msg: 就是客户端发送的数据 默认Object
      */
     @Override

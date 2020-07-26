@@ -30,8 +30,8 @@ public class A_Subject {
     }
 
     //通知所有观察者
-    public void notifyObserver(){
-        for (B_Observer BObserver : list){
+    public void notifyObserver() {
+        for (B_Observer BObserver : list) {
             BObserver.update();
         }
     }

@@ -48,7 +48,6 @@ public class NettyServer {
             ChannelFuture cf = bootstrap.bind(6668).sync();
 
             //给cf 注册监听器，监控我们关心的事件
-
             cf.addListener(new ChannelFutureListener() {
                 @Override
                 public void operationComplete(ChannelFuture future) throws Exception {
