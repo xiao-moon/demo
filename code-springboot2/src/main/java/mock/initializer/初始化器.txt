@@ -1,0 +1,23 @@
+1.实现 ApplicationContextInitializer 接口
+    @Override
+    public void initialize(ConfigurableApplicationContext applicationContext) {
+        ConfigurableEnvironment environment = applicationContext.getEnvironment();
+        Map<String, Object> map = new HashMap<>();
+        map.put("first", "系统初始化方式一");
+        MapPropertySource mapPropertySource = new MapPropertySource("firstInitializer", map);
+        environment.getPropertySources().addLast(mapPropertySource);
+        System.out.println("run firstInitializer");
+    }
+
+2.注册方式
+2.1 方式一
+在resources下新建 META-INF/spring.factories 文件
+添加内容:org.springframework.context.ApplicationContextInitializer=mock.initializer.D_FirstInitializer
+2.2 方式二
+在启动器里通过new SpringApplication 的方式注册初始化器;具体如下:
+        SpringApplication springApplication = new SpringApplication(Sb2Application.class);
+        springApplication.addInitializers(new E_SecondInitializer());
+        springApplication.run(args);
+2.3 方式三
+在配置文件application.properties中配置:context.initializer.classes=mock.initializer.F_ThirdInitializer
+注:这种方式启动优先级最高;最先被加载;其余两种按照order顺序加载[order越小越优先执行]
