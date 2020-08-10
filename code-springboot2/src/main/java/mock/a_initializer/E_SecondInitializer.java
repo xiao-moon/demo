@@ -1,4 +1,4 @@
-package mock.initializer;
+package mock.a_initializer;
 
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;

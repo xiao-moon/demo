@@ -1,4 +1,4 @@
-package mock.initializer;
+package mock.a_initializer;
 
 import lombok.extern.java.Log;
 import org.junit.Test;

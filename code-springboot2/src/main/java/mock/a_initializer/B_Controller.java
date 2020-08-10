@@ -1,4 +1,4 @@
-package mock.initializer;
+package mock.a_initializer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

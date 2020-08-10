@@ -1,6 +1,5 @@
 package mock;
 
-import mock.initializer.E_SecondInitializer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

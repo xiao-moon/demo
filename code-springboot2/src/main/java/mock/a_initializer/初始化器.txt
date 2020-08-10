@@ -13,14 +13,14 @@
 2.注册方式
 2.1 方式一
 在resources下新建 META-INF/spring.factories 文件
-添加内容:org.springframework.context.ApplicationContextInitializer=mock.initializer.D_FirstInitializer
+添加内容:org.springframework.context.ApplicationContextInitializer=mock.a_initializer.D_FirstInitializer
 2.2 方式二
 在启动器里通过new SpringApplication 的方式注册初始化器;具体如下:
         SpringApplication springApplication = new SpringApplication(Sb2Application.class);
         springApplication.addInitializers(new E_SecondInitializer());
         springApplication.run(args);
 2.3 方式三
-在配置文件application.properties中配置:context.initializer.classes=mock.initializer.F_ThirdInitializer
+在配置文件application.properties中配置:context.initializer.classes=mock.a_initializer.F_ThirdInitializer
 注:这种方式启动优先级最高;最先被加载;其余两种按照order顺序加载[order越小越优先执行]
 
 二、源码
@@ -39,8 +39,8 @@ this.applyInitializers 该方法会获取到加载到private List<ApplicationCon
 遍历这个集合;并执行ApplicationContextInitializer的回调函数initialize方法
 
 三、三种加载方式解析
-第一种和第三种是通过spring.factories文件进行加载的;其中第三种的加载顺序最优先;因为其是在jar包中的spring.factories中定义的DelegatingApplicationContextInitializer类
-该类会从application.properties中读取响应的配置,所以加载顺序最为优先
+第一种和第三种是通过spring.factories文件进行加载的;其中第三种的加载顺序最优先;因为其是在jar包中的spring.factories中定义的 DelegatingApplicationContextInitializer
+类;该类会从application.properties中读取响应的配置,并且order为0;所以加载顺序最为优先
 第二种是通过硬编码方式直接添加到初始化集合中的
 
 
@@ -50,8 +50,13 @@ ApplicationContextInitializer 作用:
     2.用来编码设置一些属性变量通常用在web环境中
     3.可以实现order接口进行排序
 
-
-
+五、面试题
+介绍下 SpringFactoriesLoader?
+SpringFactoriesLoader 如何加载工厂类
+系统初始化器的作用:SpringBoot容器的回调接口;可以通过他想SpringBoot容器中定义属性
+系统初始化器的调用时机
+如何自定义实现系统初始化器
+注意事项:不同初始化器的实现方式让order失效的问题
 
 
 
