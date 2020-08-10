@@ -1,3 +1,4 @@
+一、使用
 1.实现 ApplicationContextInitializer 接口
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
@@ -21,3 +22,64 @@
 2.3 方式三
 在配置文件application.properties中配置:context.initializer.classes=mock.initializer.F_ThirdInitializer
 注:这种方式启动优先级最高;最先被加载;其余两种按照order顺序加载[order越小越优先执行]
+
+二、源码
+加载原理:
+执行启动器时:SpringApplication.run(Sb2Application.class, args);
+调用SpringApplication的构造函数,在构造函数中添加初始化数据:this.setInitializers(this.getSpringFactoriesInstances(ApplicationContextInitializer.class));
+在getSpringFactoriesInstances(Class<T> type, Class<?>[] parameterTypes, Object... args)方法中执行了如下操作:
+    1.Set<String> names = new LinkedHashSet(SpringFactoriesLoader.loadFactoryNames(type, classLoader));:加载spring.factories中的所有初始化类的路径:具体请看SpringFactoriesLoader.loadFactoryNames()方法和SpringFactoriesLoader.loadSpringFactories()方法
+    2.List<T> instances = this.createSpringFactoriesInstances(type, parameterTypes, classLoader, args, names);:创建初始化实例实例
+    3.AnnotationAwareOrderComparator.sort(instances);:对初始化实例进行排序
+执行原理:
+在 SpringApplication.run(String... args)方法中的:this.prepareContext(context, environment, listeners, applicationArguments,
+printedBanner);
+在 prepareContext 方法中又调用了 this.applyInitializers(context);这个方法
+this.applyInitializers 该方法会获取到加载到private List<ApplicationContextInitializer<?>> initializers;中的所有初始化集合
+遍历这个集合;并执行ApplicationContextInitializer的回调函数initialize方法
+
+三、三种加载方式解析
+第一种和第三种是通过spring.factories文件进行加载的;其中第三种的加载顺序最优先;因为其是在jar包中的spring.factories中定义的DelegatingApplicationContextInitializer类
+该类会从application.properties中读取响应的配置,所以加载顺序最为优先
+第二种是通过硬编码方式直接添加到初始化集合中的
+
+
+四、作用
+ApplicationContextInitializer 作用:
+    1.上下文刷新即refresh方法前调用
+    2.用来编码设置一些属性变量通常用在web环境中
+    3.可以实现order接口进行排序
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
