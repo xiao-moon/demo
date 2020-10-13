@@ -26,7 +26,7 @@
         <druid.version>1.1.14</druid.version>
         <mybatis.plus.version>3.2.0</mybatis.plus.version>
         <logback.version>1.2.3</logback.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
         <social.version>1.1.6.RELEASE</social.version>
